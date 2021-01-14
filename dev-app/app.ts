@@ -1,9 +1,6 @@
-import { Login } from './login/login';
-import Aurelia, { ICustomElementViewModel, IRouter } from "aurelia";
-import { AuthorizeStep } from '../src/authorize-step';
+import { ICustomElementViewModel, IRouter } from "aurelia";
 export class App implements ICustomElementViewModel {
-  constructor(@IRouter private readonly router: IRouter,
-    private readonly authorize: AuthorizeStep) {
+  constructor(@IRouter private readonly router: IRouter) {
   }
 
   attached() {

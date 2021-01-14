@@ -46,8 +46,8 @@ export default class OpenIdConnectAuthorizeStep implements IHookDefinition {
   private requiresRole(
     navigation: Navigation,
     role: OpenIdConnectRoles): boolean {
-    const roles = navigation.route.parameters['roles'] as unknown as OpenIdConnectRoles[] ?? [];
-    if (navigation.route.component && typeof navigation.route.component === 'object') {
+    const roles = navigation.route?.parameters['roles'] as unknown as OpenIdConnectRoles[] ?? [];
+    if (navigation.route?.component && typeof navigation.route?.component === 'object') {
       roles.push(...((navigation.route.component as { roles: OpenIdConnectRoles[] })?.roles as []) ?? []);
     }
     return roles.includes(role);

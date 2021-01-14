@@ -28,14 +28,14 @@ module.exports = function(env, { analyze }) {
   return {
     mode: production ? 'production' : 'development',
     devtool: production ? 'source-map' : 'inline-source-map',
-    entry: './src/index.ts',
+    entry: './dev-app/main.ts',
     output: {
       path: path.resolve(__dirname, 'dist'),
       filename: 'entry-bundle.js'
     },
     resolve: {
       extensions: ['.ts', '.js'],
-      modules: [path.resolve(__dirname, 'src'), 'node_modules']
+      modules: [path.resolve(__dirname, 'dev-app'), path.resolve(__dirname, 'src'), 'node_modules']
     },
     devServer: {
       historyApiFallback: true,
@@ -56,7 +56,7 @@ module.exports = function(env, { analyze }) {
       ]
     },
     plugins: [
-      new HtmlWebpackPlugin({ template: 'index.ejs' }),
+      new HtmlWebpackPlugin({ template: 'index.html' }),
       analyze && new BundleAnalyzerPlugin()
     ].filter(p => p)
   }

@@ -1,4 +1,4 @@
-import { IRoute, HookTypes, Navigation } from '@aurelia/router';
+import { IRoute, HookTypes } from '@aurelia/router';
 
 import { inject, IPlatform, IRouter, ViewportInstruction } from 'aurelia';
 import OpenIdConnectAuthorizeStep from './open-id-connect-authorize-step';

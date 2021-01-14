@@ -16,13 +16,8 @@ export default class OpenIdConnect {
     public readonly logger: OpenIdConnectLogger,
     public readonly userManager: UserManager) { }
 
-  public configure(routerConfiguration: IRouter): void {
-
-    if (typeof routerConfiguration === 'undefined' || routerConfiguration === null) {
-      throw new Error('routerConfiguration parameter must not be undefined or null');
-    }
-
-    this.openIdConnectRouting.configureRouter(routerConfiguration);
+  public configure(): void {
+    this.openIdConnectRouting.configureRouter();
   }
 
   public async login(args: any = {}): Promise<void> {

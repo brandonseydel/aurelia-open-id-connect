@@ -1,5 +1,5 @@
 import OpenIdConnectUserBlock from './open-id-connect-user-block';
-import template from './open-id-connect-debugger.html';
+import template from './open-id-connect-user-debug.html';
 import { customElement } from 'aurelia';
 
 @customElement({ name: 'open-id-connect-user-debug', template })
